@@ -11,3 +11,7 @@ amber ./main.ab
 ## Requirements
 
 Amber 0.3.0-alpha or newer
+
+## Screenshots
+
+[![Preview]](https://raw.githubusercontent.com/MacioSzekTV/TicTacToe-Amber/main/preview.png)(https://github.com/MacioSzekTV/TicTacToe-Amber)
