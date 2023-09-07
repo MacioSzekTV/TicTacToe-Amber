@@ -7,134 +7,103 @@ let table = ["", "", "", "", "", "", "", "", ""]
 let isPlaying = true
 let winner = ""
 
-#[allow_nested_if_else]
 pub fun move(selectedRow: Num, selectedCol: Num): Num{
     let tableMove = 0
 
-    if selectedRow == 1 {
-        if selectedCol == 1 {
+    if{
+        selectedRow == 1 and selectedCol == 1{
             tableMove = 0
             return tableMove
-        }else{
+        }
+        selectedRow == 1 and selectedCol != 1{
             tableMove = selectedRow*(selectedCol+-1)
             return tableMove
-        }    
-    }else{
-        if selectedRow == 2 {
+        }
+        selectedRow == 2{
             tableMove = (selectedRow+-1)*(selectedCol+-1)+3
             return tableMove
-        }else{
+        }
+        selectedRow == 3{
             tableMove = (selectedRow+-2)*(selectedCol+-1)+6
             return tableMove
         }
     }
 }
 
-#[allow_nested_if_else]
-pub fun winCheckv1(){
-    if table[1] == "O" and table[4] == "O" and table[7] == "O" {
-        isPlaying = false
-        winner = "Player One"
-    }else{
-        if table[2] == "O" and table[5] == "O" and table[8] == "O"{
-            isPlaying = false
-            winner = "Player One"
-        }else{
-            if table[0] == "O" and table[4] == "O" and table[8] == "O" {
-                isPlaying = false
-                winner = "Player One"
-            }else{
-                if table[2] == "O" and table[4] == "O" and table[6] == "O" {
-                    isPlaying = false
-                    winner = "Player One"
-                }
-            }
-        }
-    }
-}
-
-#[allow_nested_if_else]
 pub fun winCheck(){
-    if table[0] == "O" and table[1] == "O" and table[2] == "O" {
-        isPlaying = false
-        winner = "Player One"
-    }else{
-        if table[3] == "O" and table[4] == "O" and table[5] == "O" {
+    if{
+        table[0] == "O" and table[1] == "O" and table[2] == "O" {
             isPlaying = false
             winner = "Player One"
-        }else{
-            if table[6] == "O" and table[7] == "O" and table[8] == "O" {
-                isPlaying = false
-                winner = "Player One"
-            }else{
-                if table[0] == "O" and table[3] == "O" and table[5] == "O" {
-                    isPlaying = false
-                    winner = "Player One"
-                }else{
-                    winCheckv1()
-                }
-            }
         }
-    }
-}
-
-#[allow_nested_if_else]
-pub fun winCheck2(){
-    if table[0] == "X" and table[1] == "X" and table[2] == "X" {
-        isPlaying = false
-        winner = "Player Two"
-    }else{
-        if table[3] == "X" and table[4] == "X" and table[5] == "X" {
+        table[3] == "O" and table[4] == "O" and table[5] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[6] == "O" and table[7] == "O" and table[8] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[0] == "O" and table[3] == "O" and table[5] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[1] == "O" and table[4] == "O" and table[7] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[2] == "O" and table[5] == "O" and table[8] == "O"{
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[0] == "O" and table[4] == "O" and table[8] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[2] == "O" and table[4] == "O" and table[6] == "O" {
+            isPlaying = false
+            winner = "Player One"
+        }
+        table[0] == "X" and table[1] == "X" and table[2] == "X" {
             isPlaying = false
             winner = "Player Two"
-        }else{
-            if table[6] == "X" and table[7] == "X" and table[8] == "X" {
-                isPlaying = false
-                winner = "Player Two"
-            }else{
-                if table[0] == "X" and table[3] == "X" and table[5] == "X" {
-                    isPlaying = false
-                    winner = "Player Two"
-                }else{
-                    if table[1] == "X" and table[4] == "X" and table[7] == "X" {
-                        isPlaying = false
-                        winner = "Player Two"
-                    }else{
-                        if table[2] == "X" and table[5] == "X" and table[8] == "X" {
-                            isPlaying = false
-                            winner = "Player Two"
-                        }else{
-                            if table[0] == "X" and table[4] == "X" and table[8] == "X" {
-                                isPlaying = false
-                                winner = "Player Two"
-                            }else{
-                                if table[2] == "X" and table[4] == "X" and table[6] == "X" {
-                                    isPlaying = false
-                                    winner = "Player Two"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        }
+        table[0] == "X" and table[1] == "X" and table[2] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[3] == "X" and table[4] == "X" and table[5] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[6] == "X" and table[7] == "X" and table[8] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[0] == "X" and table[3] == "X" and table[5] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[1] == "X" and table[4] == "X" and table[7] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[2] == "X" and table[5] == "X" and table[8] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[0] == "X" and table[4] == "X" and table[8] == "X" {
+            isPlaying = false
+            winner = "Player Two"
+        }
+        table[2] == "X" and table[4] == "X" and table[6] == "X" {
+            isPlaying = false
+            winner = "Player Two"
         }
     }
 }
 
-#[allow_absurd_cast]
-pub fun game(){
-    echo "\nPlayer 1 move:\n"
-
-    echo "Select a row (1, 2, 3): "
-    let selectedRow = input() as Num
-
-    echo "Select a column (1, 2, 3): "
-    let selectedCol = input() as Num
-
-    let tableMove = move(selectedRow, selectedCol)
-        
-    table[tableMove] = "O"
-
+pub fun printTable() {
     echo "-----------"
     echo "| {table[0]} | {table[1]} | {table[2]} |"
     echo "-----------"
@@ -144,29 +113,49 @@ pub fun game(){
     echo "-----------"
 
     winCheck()
+}
+
+pub fun game(){
+    echo "\nPlayer 1 move:\n"
+
+    echo "Select a row (1, 2, 3): "
+    let selectedRow = parse(input()) failed {
+        echo "\nInvalid input!"
+        exit(1)
+    }
+
+    echo "Select a column (1, 2, 3): "
+    let selectedCol = parse(input()) failed {
+        echo "\nInvalid input!"
+        exit(1)
+    }
+
+    let tableMove = move(selectedRow, selectedCol)
+        
+    table[tableMove] = "O"
+
+    printTable()
 
     if isPlaying == true{
         echo "\nPlayer 2 move:\n"
 
         echo "Select a row (1, 2, 3): "
-        let selectedRow2 = input() as Num
+        let selectedRow2 = parse(input()) failed {
+            echo "\nInvalid input!"
+            exit(1)
+        }
 
         echo "Select a column (1, 2, 3): "
-        let selectedCol2 = input() as Num
+        let selectedCol2 = parse(input()) failed {
+            echo "\nInvalid input!"
+            exit(1)
+        }
 
         let tableMove = move(selectedRow2, selectedCol2)
 
         table[tableMove] = "X"
 
-        echo "-----------"
-        echo "| {table[0]} | {table[1]} | {table[2]} |"
-        echo "-----------"
-        echo "| {table[3]} | {table[4]} | {table[5]} |"
-        echo "-----------"
-        echo "| {table[6]} | {table[7]} | {table[8]} |"
-        echo "-----------"
-
-        winCheck2()
+        printTable()
     }
 }
 
