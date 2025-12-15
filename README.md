@@ -16,7 +16,7 @@ The game was written in a single day without prior knowledge of the Amber langua
 
 ## Requirements
 
-- **Amber** version 0.3.0-alpha or newer
+- **Amber** version bacdeb5 (0.5.2)
 
 ---
 
