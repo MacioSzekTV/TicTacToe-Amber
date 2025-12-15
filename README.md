@@ -10,8 +10,6 @@ A simple Tic-Tac-Toe game implemented in the **Amber** programming language.
 
 This project is a basic implementation of the classic Tic-Tac-Toe game, developed in **Amber**.
 
-The game was written in a single day without prior knowledge of the Amber language.
-
 ---
 
 ## Requirements
